@@ -1,0 +1,37 @@
+<div>
+  <form [formGroup]="RegistrationForm">
+    <label for="firstName"> First Name </label>
+    <input type="text" id="firstName"  formControlName="firstName">
+    <p *ngIf="FirstName.touched && FirstName.invalid" > Enter Valid First name </p>
+    <br> <br>
+    <label for="lastName"> Last Name </label>
+    <input type="text" id="lastName" formControlName="lastName">
+    
+  
+    <br> <br>
+    <label for="mobileNumber"> Mobile Number </label>
+    <input type="number" id="mobileNumber" formControlName="mobileNumber">
+    <p *ngIf="MobileNumber.touched && MobileNumber.invalid "> Please enter valid Mobile Number </p>
+
+    <br> <br>
+    <label for="dob"> Date of Birth </label>
+    <input type="date" id="dob" formControlName="dob">
+    <p *ngIf="Dob.touched && Dob.invalid"> Please enter valid Dob </p>
+    <br> <br>
+    <label for="emailId"> Email Id </label>
+    <input type="email" id="email" formControlName="emailId">
+    <p *ngIf="EmailId.touched && EmailId.invalid"> Please enter valid Email Id </p>
+    <br> <br>
+    <label for="password"> Password</label>
+    <input type="password" id="password" formControlName="password">
+    <p *ngIf="Password.touched && Password.invalid"> Please enter valid Password </p>
+    <br> <br>
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword" formControlName="confirmPassword">
+    <p *ngIf="ConfirmPassword.touched && ConfirmPassword.invalid"> Please enter valid  Password </p>
+    <br> <br>
+
+  </form>
+</div>
+
+<button type="button" (click)="Submit()" > Submit </button>
