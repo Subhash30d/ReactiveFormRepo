@@ -15,7 +15,7 @@ export class AppComponent implements OnInit{
   
 
   RegistrationForm: any;
-  title = 'AssignmentsProj';
+  title = 'ReactiveFormsTemplate';
   ngOnInit(): void {
     this.RegistrationForm=new FormGroup({
       'firstName': new FormControl("",[Validators.required,Validators.minLength(5)]),
