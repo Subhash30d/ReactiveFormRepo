@@ -76,6 +76,9 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: Deployment
+        run: npm run deploy
+
         # - name: Build the hello-docker Docker image
         # run: docker build . --tag env.REGISTRY/Subhash30d/hello-docker-gcr-demo:latest
         # run: docker run env.REGISTRY/Subhash30d/hello-docker-gcr-demo:latest
