@@ -1,54 +1,123 @@
+<h1 class="title">Registration Form:</h1>
 <div>
   <form [formGroup]="RegistrationForm" id="loginForm">
-    <label for="firstName"> First Name </label>
-    <input type="text" id="firstName" formControlName="firstName" />
-    <p *ngIf="FirstName.touched && FirstName.invalid">Enter Valid First name</p>
+    <div class="row g-3">
+      <div class="col">
+        <label for="firstName" class="form-label">First Name :</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter your First name"
+          aria-label="First name"
+          id="firstName"
+          formControlName="firstName"
+        />
+        <p *ngIf="FirstName.touched && FirstName.invalid">
+          Kindly Enter a Valid First name
+        </p>
+      </div>
+      <div class="col">
+        <label for="lastName" class="form-label">Last Name :</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter your Last name"
+          aria-label="Last name"
+          id="lastName"
+          formControlName="lastName"
+        />
+      </div>
+    </div>
+
     <br />
-    <br />
-    <label for="lastName"> Last Name </label>
-    <input type="text" id="lastName" formControlName="lastName" />
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Email :</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="emailId"
+          placeholder="Enter Email ID"
+        />
+        <p *ngIf="EmailId.touched && EmailId.invalid">
+          Kindly enter a valid Email Id
+        </p>
+      </div>
+      <div class="col-md-6">
+        <label for="password" class="form-label">Password :</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          placeholder="Enter your Password"
+        />
+        <p *ngIf="Password.touched && Password.invalid">
+          Kindly enter a valid Password
+        </p>
+      </div>
+    </div>
 
     <br />
     <br />
-    <label for="mobileNumber"> Mobile Number </label>
-    <input type="number" id="mobileNumber" formControlName="mobileNumber" />
-    <p *ngIf="MobileNumber.touched && MobileNumber.invalid">
-      Please enter valid MobileNumber
-    </p>
+
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label for="mobileNumber" class="form-label"> Mobile Number :</label>
+        <input
+          type="number"
+          class="form-control"
+          id="mobileNumber"
+          formControlName="mobileNumber"
+          placeholder="Enter your Mobile number"
+        />
+        <p *ngIf="MobileNumber.touched && MobileNumber.invalid">
+          Kindly enter a valid MobileNumber
+        </p>
+      </div>
+      <div class="col-md-6">
+        <label for="dob" class="form-label"> Date of Birth :</label>
+        <input
+          type="date"
+          class="form-control"
+          id="dob"
+          formControlName="dob"
+          placeholder="Enter your Date of Birth"
+        />
+        <p *ngIf="Dob.touched && Dob.invalid">Please enter a valid Dob</p>
+      </div>
+    </div>
 
     <br />
     <br />
-    <label for="dob"> Date of Birth </label>
-    <input type="date" id="dob" formControlName="dob" />
-    <p *ngIf="Dob.touched && Dob.invalid">Please enter valid Dob</p>
-    <br />
-    <br />
-    <label for="emailId"> Email Id </label>
-    <input type="email" id="email" formControlName="emailId" />
-    <p *ngIf="EmailId.touched && EmailId.invalid">
-      Please enter valid Email Id
-    </p>
-    <br />
-    <br />
-    <label for="password"> Password</label>
-    <input type="password" id="password" formControlName="password" />
-    <p *ngIf="Password.touched && Password.invalid">
-      Please enter valid Password
-    </p>
-    <br />
-    <br />
-    <label for="confirmPassword">Confirm Password</label>
-    <input
-      type="password"
-      id="confirmPassword"
-      formControlName="confirmPassword"
-    />
-    <p *ngIf="ConfirmPassword.touched && ConfirmPassword.invalid">
-      Please enter valid Password
-    </p>
-    <br />
-    <br />
+
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label for="confirmPassword">Confirm Password :</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          class="form-control"
+          formControlName="confirmPassword"
+          placeholder="Confirm the Entered Password"
+        />
+        <p
+          *ngIf="
+            ConfirmPassword.touched &&
+            RegistrationForm.value.password !==
+              RegistrationForm.value.confirmPassword
+          "
+        >
+          Password and Confirm Password does not match
+        </p>
+      </div>
+      <div class="col-md-6">
+        <br />
+        <button type="button" class="btn btn-primary" (click)="Submit()">
+          Submit
+        </button>
+      </div>
+    </div>
   </form>
 </div>
-
-<button type="button" (click)="Submit()">Submit</button>
