@@ -76,7 +76,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Deployment
+      - name: Deployment Step
         run: npm run deploy
 
         # - name: Build the hello-docker Docker image
